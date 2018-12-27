@@ -26,3 +26,11 @@ Route::post('admin/login', 'Admin\LoginController@login');
 Route::post('admin/logout', 'Admin\LoginController@logout')->name('admin.logout');
 
 Route::get('admin/panel', 'Admin\AdminController@index')->name('admin.panel');
+
+
+// shop Login
+Route::get('shop/login', 'Shop\LoginController@showLoginForm')->name('shop.login');
+Route::post('shop/login', 'Shop\LoginController@login');
+Route::post('shop/logout', 'Shop\LoginController@logout')->name('shop.logout');
+
+Route::get('shop/panel', 'Shop\ShopController@index')->name('shop.panel');

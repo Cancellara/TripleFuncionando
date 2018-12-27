@@ -24,6 +24,12 @@ class RedirectIfAuthenticated
                 }
                 break;
 
+            case 'shop':
+                if (Auth::guard($guard)->check()) {
+                    return redirect()->route('shop.panel');
+                }
+                break;
+
             default:
                 if (Auth::guard($guard)->check()) {
                     return redirect('/home');

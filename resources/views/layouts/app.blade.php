@@ -54,7 +54,11 @@
                                     @admin
                                         {{ Auth::user()->name }} (Admin)
                                     @else
-                                        {{ Auth::user()->name }}
+                                        @shop
+                                            {{ Auth::user()->name }} (Shop)
+                                        @else
+                                            {{ Auth::user()->name }}
+                                        @endshop
                                     @endadmin
 
 
