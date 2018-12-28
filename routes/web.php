@@ -34,3 +34,7 @@ Route::post('shop/login', 'Shop\LoginController@login');
 Route::post('shop/logout', 'Shop\LoginController@logout')->name('shop.logout');
 
 Route::get('shop/panel', 'Shop\ShopController@index')->name('shop.panel');
+
+//Shop register
+Route::get('shop/register', 'Shop\RegisterController@showRegistrationForm')->name('shop.register');
+Route::post('shop/register', 'Shop\RegisterController@register');
