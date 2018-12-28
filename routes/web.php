@@ -17,6 +17,8 @@ Route::get('/', function () {
 
 Auth::routes();
 
+Route::get('/register/verify/{code}', 'Auth\RegisterController@activateUser')->name('activate.user');
+
 Route::get('/home', 'HomeController@index')->name('home');
 
 
