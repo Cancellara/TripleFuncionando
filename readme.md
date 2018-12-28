@@ -22,5 +22,5 @@ if ($user && $user->status && $this->attemptLogin($request))
 por
  if(Auth::attempt(['email' => $request->email, 'password' => $request->password, 'status' => 1]))
 
-Ver en este enlace para enviar mensajes.
+Ver en este enlace para enviar mensajes: https://laracasts.com/discuss/channels/laravel/how-to-override-auth-login-function-in-laravel
 <h1>
