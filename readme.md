@@ -1,4 +1,4 @@
-Redireciones al panel cuando se esta autenticado con un usuario
+Redireciones al panel cuando se esta autenticado con un usuario (dar edit y ver código)
 
 <?php
 
