@@ -42,4 +42,8 @@ class User extends Authenticatable
     {
         return true;
     }
+
+    protected $casts = [
+        "status" => "boolean",
+    ];
 }
