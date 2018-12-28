@@ -21,7 +21,7 @@ class LoginController extends Controller
 
     use AuthenticatesUsers;
 
-    protected $redirectTo = '/login/panel';
+    protected $redirectTo = '/shop/panel';
 
     /**
      * Create a new controller instance.

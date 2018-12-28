@@ -17,24 +17,18 @@ class RedirectIfAuthenticated
      */
     public function handle($request, Closure $next, $guard = null)
     {
-        switch ($guard) {
-            case 'admin':
-                if (Auth::guard($guard)->check()) {
-                    return redirect()->route('admin.panel');
-                }
-                break;
-
-            case 'shop':
-                if (Auth::guard($guard)->check()) {
-                    return redirect()->route('shop.panel');
-                }
-                break;
-
-            default:
-                if (Auth::guard($guard)->check()) {
-                    return redirect('/home');
-                }
-                break;
+        //dd(Auth::guard('admin')->check() && auth()->user()->isAdmin());
+        if (Auth::guard('admin')->check() )
+        {
+            return redirect()->route('admin.panel');
+        }
+        elseif (Auth::guard('shop')->check())
+        {
+            return redirect()->route('shop.panel');
+        }
+        elseif (auth()->check())
+        {
+            return redirect('/home');
         }
 
         return $next($request);
