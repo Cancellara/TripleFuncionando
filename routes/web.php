@@ -41,6 +41,12 @@ Route::get('shop/panel', 'Shop\ShopController@index')->name('shop.panel');
 Route::get('shop/register', 'Shop\RegisterController@showRegistrationForm')->name('shop.register');
 Route::post('shop/register', 'Shop\RegisterController@register');
 
+Route::get('shop/rate', 'Shop\ShopController@showRateForm')->name('shop.rate');
+
+Route::post('shop/payPremium', 'Shop\ShopPayPalController@payPremium')->name('payPremium');
+
+Route::get('/shop/activate/{code}', 'Shop\ShopPayPalController@activateShop')->name('activate.shop');
+
 //PayPal
 //payment form
 Route::get('/formPaypal', 'PaymentController@index');

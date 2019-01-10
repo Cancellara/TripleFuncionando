@@ -21,4 +21,9 @@ class ShopController extends Controller
     {
         return view('shop.panel');
     }
+
+    public function showRateForm()
+    {
+        return view('shop.rate');
+    }
 }

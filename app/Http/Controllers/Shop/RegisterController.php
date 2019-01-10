@@ -32,7 +32,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/shop/panel';
+    protected $redirectTo = '/shop/rate';
 
     /**
      * Create a new controller instance.
@@ -67,10 +67,14 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        $data['activation_code'] = str_random(30).time();
+
+        //dd($data['activation_code']);
         return Shop::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
+            'activation_code' => $data['activation_code'],
         ]);
     }
 

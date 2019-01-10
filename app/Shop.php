@@ -16,7 +16,7 @@ class Shop extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password', 'status', 'activation_code',
     ];
 
     /**
@@ -42,4 +42,8 @@ class Shop extends Authenticatable
     {
         return false;
     }
+
+    protected $casts = [
+        "status" => "boolean",
+    ];
 }
