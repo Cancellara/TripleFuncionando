@@ -54,3 +54,9 @@ Route::get('/formPaypal', 'PaymentController@index');
 Route::post('paypal', 'PaymentController@payWithpaypal');
 // route for check status of the payment
 Route::get('status', 'PaymentController@getPaymentStatus');
+
+//Lozalización
+Route::get('{locale}/testLocalizacion', 'localizacionController@test')->name('localizacion.test')->where([
+    'lang' => 'en|es']);
+Route::get('{locale}/testLocalizacion2', 'localizacionController@test2')->name('localizacion.test2')->where([
+    'lang' => 'en|es']);
