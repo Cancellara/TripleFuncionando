@@ -40,3 +40,11 @@ Route::get('shop/panel', 'Shop\ShopController@index')->name('shop.panel');
 //Shop register
 Route::get('shop/register', 'Shop\RegisterController@showRegistrationForm')->name('shop.register');
 Route::post('shop/register', 'Shop\RegisterController@register');
+
+//PayPal
+//payment form
+Route::get('/formPaypal', 'PaymentController@index');
+// route for processing payment
+Route::post('paypal', 'PaymentController@payWithpaypal');
+// route for check status of the payment
+Route::get('status', 'PaymentController@getPaymentStatus');
