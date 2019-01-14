@@ -60,3 +60,6 @@ Route::get('{locale}/testLocalizacion', 'localizacionController@test')->name('lo
     'lang' => 'en|es']);
 Route::get('{locale}/testLocalizacion2', 'localizacionController@test2')->name('localizacion.test2')->where([
     'lang' => 'en|es']);
+
+//Editor
+Route::get('editor', 'editorController@index')->name('editor');
